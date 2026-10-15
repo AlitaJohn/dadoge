@@ -22,6 +22,9 @@ h1,h2{font-family:'Mochiy Pop P One',cursive;margin:0;font-weight:400;text-trans
 .navigation nav a::after{content:'';position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--purple);border-radius:2px;transition:right .25s cubic-bezier(.2,.8,.2,1)}
 .navigation nav a:hover{opacity:1;transform:translateY(-2px)}
 .navigation nav a:hover::after{right:0}
+.nav-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.nav-social{height:36px;min-width:36px;padding:0 11px;display:grid;place-items:center;border:2px solid var(--ink);border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.4px;background:var(--cream);transition:transform .2s}
+.nav-social:hover{transform:translateY(-2px)}
 .nav-cta{background:var(--lime);color:var(--ink);border-radius:999px;padding:10px 20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;box-shadow:0 4px 14px #00000030;transition:transform .2s,box-shadow .2s}
 .nav-cta:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 6px 18px #00000040}
 
@@ -34,6 +37,7 @@ h1,h2{font-family:'Mochiy Pop P One',cursive;margin:0;font-weight:400;text-trans
 .hero h1 span{color:var(--purple)}
 .hero .sub{max-width:520px;margin:20px 0 30px;font-size:19px;line-height:1.65}
 .hero .button{margin-top:0}
+.hero-btn{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .hero-stats{display:flex;gap:34px;margin-top:38px;flex-wrap:wrap}
 .hero-stats strong{display:block;font-family:'Mochiy Pop P One',cursive;font-weight:400;font-size:20px;color:var(--purple);text-transform:uppercase;-webkit-text-stroke:1px var(--ink);paint-order:stroke fill}
 .hero-stats span{display:block;font-size:10.5px;letter-spacing:.6px;color:#6b5480;text-transform:uppercase;font-weight:700;margin-top:2px}
@@ -168,10 +172,12 @@ summary>span{font-size:18px;color:var(--purple);transition:transform .2s;flex-sh
 details[open] summary>span{transform:rotate(45deg)}
 .faq-card p{font-size:14px;line-height:1.6;margin:0 0 18px;max-width:480px;color:#241130}
 
-footer{background:var(--ink);color:var(--cream);display:flex;align-items:center;gap:20px;padding:28px 6%}
+footer{background:var(--ink);color:var(--cream);display:flex;align-items:center;gap:20px;padding:28px 6%;flex-wrap:wrap}
 .footer-brand{font-family:'Mochiy Pop P One',cursive;font-weight:400;font-size:14px;color:var(--lime);text-transform:uppercase;-webkit-text-stroke:.5px var(--cream);paint-order:stroke fill}
 footer p{font-size:11px;line-height:1.6;margin:0;color:#e6cdf5}
-.back-top{margin-left:auto;height:36px;width:36px;display:grid;place-items:center;border:1px solid #ffffff66;border-radius:50%}
+.footer-end{margin-left:auto;display:flex;align-items:center;gap:10px}
+.footer-end a{height:36px;min-width:36px;padding:0 12px;display:grid;place-items:center;border:1px solid #ffffff66;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.4px}
+.back-top{width:36px;padding:0;border-radius:50%}
 
 @media(max-width:960px){
   .vote-steps{grid-template-columns:minmax(0,1fr);max-width:480px;margin:0 auto}
@@ -179,6 +185,8 @@ footer p{font-size:11px;line-height:1.6;margin:0;color:#e6cdf5}
 
 @media(max-width:700px){
   .navigation nav{display:none}
+  .nav-social{display:none}
+  .hero-btn{justify-content:center}
   .cards{grid-template-columns:1fr}
   .hero{padding:50px 6% 44px}
   .hero-inner{grid-template-columns:1fr;gap:36px}
