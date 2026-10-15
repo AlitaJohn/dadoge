@@ -4,6 +4,10 @@ const status = document.getElementById('copy-status');
 
 copyBtn.addEventListener('click', async () => {
   const text = address.textContent.trim();
+  if (!text || text === 'TBA') {
+    status.textContent = 'Mint posts at launch.';
+    return;
+  }
   try {
     await navigator.clipboard.writeText(text);
   } catch (e) {
@@ -36,7 +40,7 @@ tapBtn.addEventListener('click', () => {
     flipCard.classList.add('is-interacting');
     flipInner.classList.add('is-denied');
     setStatus('Denied ✗', 'denied');
-    tapBtn.textContent = 'Try the new card';
+    tapBtn.textContent = 'Try the new doge';
     setTimeout(() => flipInner.classList.remove('is-denied'), 500);
   } else if (tapState === 'denied') {
     tapState = 'welcome';
@@ -48,6 +52,6 @@ tapBtn.addEventListener('click', () => {
     flipInner.classList.remove('is-flipped');
     flipCard.classList.remove('is-interacting');
     tapStatus.className = 'tap-status';
-    tapBtn.textContent = 'Tap the old card';
+    tapBtn.textContent = 'Tap the old doge';
   }
 });
